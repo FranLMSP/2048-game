@@ -2,6 +2,8 @@ class Board {
     constructor(width = 4, height = 4) {
         this.setSize(width, height)
         this.init()
+
+        this.generateNumber()
     }
 
     setSize(width, height) {
@@ -18,11 +20,25 @@ class Board {
 
     init() {
         this.board = []
-        for(let x = 0; x < this.width; x++) {
+        for(let y = 0; y < this.height; y++) {
             this.board.push([])
-            for(let y = 0; y < this.height; y++) {
-                this.board[x].push(0);
+            for(let x = 0; x < this.width; x++) {
+                this.board[y].push(0);
             }
         }
+    }
+
+    generateNumber(number = null) {
+        if(number === null) {
+            number = Math.floor(Math.random() * Math.floor(2)) ? 2 : 4
+        }
+        let x = 0
+        let y = 0
+        do {
+            x = Math.floor(Math.random() * Math.floor(this.width))
+            y = Math.floor(Math.random() * Math.floor(this.height))
+        } while(this.board[y][x] != 0)
+
+        this.board[y][x] = number
     }
 }
