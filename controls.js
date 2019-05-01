@@ -25,7 +25,9 @@ class Controls {
                     break
             }
 
-            Draw.drawBoard(board.getFields())
+            const generated = board.getGenerated()
+            console.log(generated)
+            Draw.drawBoard(board.getFields(), generated.x, generated.y)
         })
     }
 }
