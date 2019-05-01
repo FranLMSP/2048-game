@@ -24,6 +24,8 @@ class Controls {
                     board.move('right')
                     break
             }
+
+            Draw.drawBoard(board.getFields())
         })
     }
 }
