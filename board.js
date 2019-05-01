@@ -119,6 +119,7 @@ class Board {
                 this.moveLeft()
                 break
             case 'right':
+                this.moveRight()
                 break
             default:
                 console.error("Illegal move")
@@ -150,6 +151,39 @@ class Board {
                             last--
                             if(this.board[last][x] == 0) {
                                 this.board[last][x] = this.board[y][x]
+                                this.board[y][x] = 0
+                                this.moved = true
+                            }
+                        }
+                    }
+                }
+
+            }
+        }
+    }
+
+    moveRight() {
+        let last = this.width -1
+        this.moved = false
+
+        for(let y = 0; y < this.height; y++) {
+            last = this.width -1
+            for(let x = this.width - 2 ; x >= 0; x--) {
+
+                if(this.board[y][x] != 0) {
+                    if(this.board[y][last] == 0 || this.board[y][x] == this.board[y][last]) {
+                        this.board[y][last] += this.board[y][x]
+                        if(last > 1) {
+                            last--
+                        }
+
+                        this.board[y][x] = 0
+                        this.moved = true
+                    } else {
+                        while(this.board[y][last] != 0 && last > x) {
+                            last--
+                            if(this.board[y][last] == 0) {
+                                this.board[y][last] = this.board[y][x]
                                 this.board[y][x] = 0
                                 this.moved = true
                             }
