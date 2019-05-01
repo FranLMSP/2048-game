@@ -21,6 +21,7 @@ class Board {
     }
 
     init() {
+        this.generated = {x: null, y: null}
         this.board = []
         for(let y = 0; y < this.height; y++) {
             this.board.push([])
@@ -31,6 +32,7 @@ class Board {
     }
 
     generateNumber(number = null, force = false) {
+        this.generated = {x: null, y: null}
         if(force || this.moved) {
 
             if(number === null) {
@@ -43,12 +45,17 @@ class Board {
                 y = Math.floor(Math.random() * Math.floor(this.height))
             } while(this.board[y][x] != 0)
 
+            this.generated = {x: x, y: y}
             this.board[y][x] = number
         }
     }
 
     getFields() {
         return this.board
+    }
+
+    getGenerated() {
+        return {...this.generated}
     }
 
     /*
