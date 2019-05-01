@@ -110,6 +110,7 @@ class Board {
 
         switch(direction) {
             case 'up':
+                this.moveUp()
                 break
             case 'down':
                 this.moveDown()
@@ -146,6 +147,39 @@ class Board {
                     } else {
                         while(this.board[last][x] != 0 && last > y) {
                             last--
+                            if(this.board[last][x] == 0) {
+                                this.board[last][x] = this.board[y][x]
+                                this.board[y][x] = 0
+                                this.moved = true
+                            }
+                        }
+                    }
+                }
+
+            }
+        }
+    }
+
+    moveUp() {
+        let last = 0
+        this.moved = false
+
+        for(let x = 0; x < this.width; x++) {
+            last = 0
+            for(let y = 1 ; y < this.height; y++) {
+
+                if(this.board[y][x] != 0) {
+                    if(this.board[last][x] == 0 || this.board[y][x] == this.board[last][x]) {
+                        this.board[last][x] += this.board[y][x]
+                        if(last < this.height-1) {
+                            last++
+                        }
+
+                        this.board[y][x] = 0
+                        this.moved = true
+                    } else {
+                        while(this.board[last][x] != 0 && last < y) {
+                            last++
                             if(this.board[last][x] == 0) {
                                 this.board[last][x] = this.board[y][x]
                                 this.board[y][x] = 0
