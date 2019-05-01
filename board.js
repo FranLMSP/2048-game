@@ -45,4 +45,24 @@ class Board {
     getFields() {
         return this.board
     }
+
+    move(direction) {
+        switch(direction) {
+            case 'up':
+                alert('up')
+                break
+            case 'down':
+                alert('down')
+                break
+            case 'left':
+                alert('left')
+                break
+            case 'right':
+                alert('right')
+                break
+            default:
+                console.log("Illegal move")
+
+        }
+    }
 }

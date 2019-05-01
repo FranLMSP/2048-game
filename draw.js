@@ -7,8 +7,6 @@ class Draw {
         const table = document.getElementById('table')
         table.innerHTML = ''
 
-        console.log(field)
-
         let drawFields = ''
         for(let y = 0; y < field.length; y++) {
 
@@ -20,8 +18,6 @@ class Draw {
 
             drawFields += '</tr>'
         }
-
-        console.log(drawFields)
 
         table.innerHTML = drawFields
     }
