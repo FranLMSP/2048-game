@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>2048 Game</title>
+    </head>
+    <body>
+        <div id="board">
+            <table id="table">
+            </table>
+        </div>
+    </body>
+</html>
+<script src="game.js"></script>
+<script src="board.js"></script>
+<script src="draw.js"></script>
+<script src="controls.js"></script>
+<script>
+    let game = null
+
+    window.onload = function() {
+        game = new Game()
+    }
+
+</script>
