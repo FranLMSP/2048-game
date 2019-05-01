@@ -116,6 +116,7 @@ class Board {
                 this.moveDown()
                 break
             case 'left':
+                this.moveLeft()
                 break
             case 'right':
                 break
@@ -182,6 +183,38 @@ class Board {
                             last++
                             if(this.board[last][x] == 0) {
                                 this.board[last][x] = this.board[y][x]
+                                this.board[y][x] = 0
+                                this.moved = true
+                            }
+                        }
+                    }
+                }
+
+            }
+        }
+    }
+
+    moveLeft() {
+        let last = 0
+        this.moved = false
+        for(let y = 0; y < this.height; y++) {
+            last = 0
+            for(let x = 1 ; x < this.width; x++) {
+
+                if(this.board[y][x] != 0) {
+                    if(this.board[y][last] == 0 || this.board[y][x] == this.board[y][last]) {
+                        this.board[y][last] += this.board[y][x]
+                        if(last < this.height-1) {
+                            last++
+                        }
+
+                        this.board[y][x] = 0
+                        this.moved = true
+                    } else {
+                        while(this.board[y][last] != 0 && last < x) {
+                            last++
+                            if(this.board[y][last] == 0) {
+                                this.board[y][last] = this.board[y][x]
                                 this.board[y][x] = 0
                                 this.moved = true
                             }
