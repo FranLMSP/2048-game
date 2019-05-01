@@ -41,4 +41,8 @@ class Board {
 
         this.board[y][x] = number
     }
+
+    getFields() {
+        return this.board
+    }
 }
