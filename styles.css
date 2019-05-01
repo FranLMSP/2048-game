@@ -1,0 +1,16 @@
+td {
+    font-family: Monospace;
+    text-align: center;
+    vertical-align: middle;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 25px;
+    width: 100px;
+    height: 100px;
+    background-color: orange;
+    color: white;
+}
+
+#table {
+    margin: 0 auto;
+}
