@@ -16,10 +16,10 @@ class Draw {
             for(let x = 0; x < field[y].length; x++) {
                 if(x === xGenerated && y === yGenerated) {
                     classString = 'class="generated"'
-                } else if(field[y][x] == 0) {
-                    classString = 'class="empty"'
+                } else if(field[y][x] <= 1024) {
+                    classString = 'class="background'+field[y][x]+'"'
                 } else {
-                    classString = ''
+                    classString = 'class="background"'
                 }
 
                 drawFields += '<td '+classString+'>' + field[y][x] + '</td>'

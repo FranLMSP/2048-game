@@ -16,50 +16,54 @@ td {
 }
 
 .background2 {
-    background-color: #ffe7ba;
+    background-color: #fdd487;
 }
 
 .background4 {
-    background-color: #ffe7ba;
+    background-color: #ffc455;
 }
 
 .background8 {
-    background-color: #ffe7ba;
+    background-color: #ffa600;
 }
 
 .background16 {
-    background-color: #ffe7ba;
+    background-color: #ff8400;
 }
 
 .background32 {
-    background-color: #ffe7ba;
+    background-color: #ff6000;
 }
 
 .background64 {
-    background-color: #ffe7ba;
+    background-color: #ff6464;
 }
 
 .background128 {
-    background-color: #ffe7ba;
+    background-color: #ff4a4a;
 }
 
 .background256 {
-    background-color: #ffe7ba;
+    background-color: #ff0000;
 }
 
 .background512 {
-    background-color: #ffe7ba;
+    background-color: #d20000;
 }
 
 .background1024 {
-    background-color: #ffe7ba;
+    background-color: #8e0000;
 }
 
-.background2048 {    
-    background-color: #ffe7ba;
+.background {
+    background-color: #000000;
 }
 
-td.empty {
+.background-generated {
+    background-color: green;
+}
+
+/* td {
     font-family: Monospace;
     text-align: center;
     vertical-align: middle;
@@ -80,9 +84,8 @@ td.generated {
     font-size: 25px;
     width: 100px;
     height: 100px;
-    background-color: red;
     color: white;
-}
+} */
 
 #table {
     margin: 0 auto;
