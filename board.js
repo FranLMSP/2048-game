@@ -20,7 +20,16 @@ class Board {
         this.moved = false
     }
 
-    init() {
+    init(testing = false) {
+        if(testing) {
+            this.board = [
+                [    2,    4,    8,   16],
+                [  256,  128,   64,   32],
+                [  512, 1024, 2048, 4096],
+                [    0,32768,16384, 8192],
+            ]
+            return
+        }
         this.generated = {x: null, y: null}
         this.board = []
         for(let y = 0; y < this.height; y++) {
