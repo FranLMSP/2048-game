@@ -21,6 +21,7 @@ class Board {
     }
 
     init() {
+        this.generated = {x: null, y: null}
         this.board = []
         for(let y = 0; y < this.height; y++) {
             this.board.push([])
@@ -43,12 +44,17 @@ class Board {
                 y = Math.floor(Math.random() * Math.floor(this.height))
             } while(this.board[y][x] != 0)
 
+            this.generated = {x: x, y: y}
             this.board[y][x] = number
         }
     }
 
     getFields() {
         return this.board
+    }
+
+    getGenerated() {
+        return {...this.generated}
     }
 
     /*
@@ -139,8 +145,9 @@ class Board {
 
                 if(this.board[y][x] != 0) {
                     if(this.board[last][x] == 0 || this.board[y][x] == this.board[last][x]) {
+                        let wasEqual = this.board[y][x] == this.board[last][x]
                         this.board[last][x] += this.board[y][x]
-                        if(last > 1) {
+                        if(last > 1 && wasEqual) {
                             last--
                         }
 
@@ -172,8 +179,9 @@ class Board {
 
                 if(this.board[y][x] != 0) {
                     if(this.board[y][last] == 0 || this.board[y][x] == this.board[y][last]) {
+                        let wasEqual = this.board[y][x] == this.board[y][last]
                         this.board[y][last] += this.board[y][x]
-                        if(last > 1) {
+                        if(last > 1 && wasEqual) {
                             last--
                         }
 
@@ -205,8 +213,9 @@ class Board {
 
                 if(this.board[y][x] != 0) {
                     if(this.board[last][x] == 0 || this.board[y][x] == this.board[last][x]) {
+                        let wasEqual = this.board[y][x] == this.board[last][x]
                         this.board[last][x] += this.board[y][x]
-                        if(last < this.height-1) {
+                        if(last < this.height-1 && wasEqual) {
                             last++
                         }
 
@@ -237,8 +246,9 @@ class Board {
 
                 if(this.board[y][x] != 0) {
                     if(this.board[y][last] == 0 || this.board[y][x] == this.board[y][last]) {
+                        let wasEqual = this.board[y][x] == this.board[y][last]
                         this.board[y][last] += this.board[y][x]
-                        if(last < this.height-1) {
+                        if(last < this.height-1 && wasEqual) {
                             last++
                         }
 
