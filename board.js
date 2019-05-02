@@ -1,9 +1,9 @@
 class Board {
     constructor(width = 4, height = 4) {
         this.setSize(width, height)
-        this.init(true)
+        this.init()
 
-        // this.generateNumber(null, true)
+        this.generateNumber(null, true)
     }
 
     setSize(width, height) {
