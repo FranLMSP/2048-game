@@ -7,7 +7,7 @@ class Board {
     }
 
     setSize(width, height) {
-        if(width <= 0 || height <= 0) {
+        if(width < 4 || height < 4) {
             console.error('The size of the board must be higher than 0')
             this.width = 4
             this.height = 4
