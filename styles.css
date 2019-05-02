@@ -11,6 +11,54 @@ td {
     color: white;
 }
 
+.background0 {
+    background-color: #ffe7ba;
+}
+
+.background2 {
+    background-color: #ffe7ba;
+}
+
+.background4 {
+    background-color: #ffe7ba;
+}
+
+.background8 {
+    background-color: #ffe7ba;
+}
+
+.background16 {
+    background-color: #ffe7ba;
+}
+
+.background32 {
+    background-color: #ffe7ba;
+}
+
+.background64 {
+    background-color: #ffe7ba;
+}
+
+.background128 {
+    background-color: #ffe7ba;
+}
+
+.background256 {
+    background-color: #ffe7ba;
+}
+
+.background512 {
+    background-color: #ffe7ba;
+}
+
+.background1024 {
+    background-color: #ffe7ba;
+}
+
+.background2048 {    
+    background-color: #ffe7ba;
+}
+
 td.empty {
     font-family: Monospace;
     text-align: center;
@@ -20,7 +68,6 @@ td.empty {
     font-size: 25px;
     width: 100px;
     height: 100px;
-    background-color: #ffe7ba;
     color: white;
 }
 
