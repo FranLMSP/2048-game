@@ -32,7 +32,6 @@ class Board {
     }
 
     generateNumber(number = null, force = false) {
-        this.generated = {x: null, y: null}
         if(force || this.moved) {
 
             if(number === null) {
